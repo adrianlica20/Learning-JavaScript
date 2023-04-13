@@ -2,6 +2,8 @@ const allTasks = document.querySelector('#all-tasks-container');
 const addTaskBtn = document.querySelector('#add-task-btn');
 const confirmTaskBtn = document.querySelector('.confirm-task-btn');
 let taskName = document.querySelector('.task-name');
+let tasksNumber = document.querySelector('#tasks-number');
+
 
 // Removes the modal and opens the task input
 addTaskBtn.addEventListener('click', () => {
@@ -33,6 +35,8 @@ function createTasks(){
     let checkbox = document.createElement('input');
     checkbox.setAttribute('type', 'checkbox');
     checkbox.setAttribute('id', `task-${idx}`);
+
+    tasksNumber.innerText = idx;
 
     newTaskContainer.appendChild(taskText);
     newTaskContainer.appendChild(checkbox);
